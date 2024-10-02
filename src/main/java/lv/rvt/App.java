@@ -2,29 +2,36 @@ package lv.rvt;
 
 import java.util.Scanner;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-        Scanner reader = new Scanner(System.in);
-        int sum = 0; int count = 0; int countEven = 0; int countOdd = 0;
-        while (true) {
-            int number = Integer.valueOf(reader.nextLine());
-            if (number == -1) {
-                System.out.println("Thx! Bye!");
-                System.out.println("Sum: " + sum);
-                System.out.println("Numbers: " + count);
-                System.out.println("Average: " + Double.valueOf(sum)/count);
-                System.out.println("Even: " + countEven);
-                System.out.println("Odd: " + countOdd);
-                break;
-            } 
-            sum = sum + number; count++; 
-            if (number % 2 == 0) {
-                countEven++; 
-            } else if (number % 2 != 0) {
-                countOdd++;
-            }
+public class App {
+
+    public static void main(String[] args) {
+        printStars(9); System.out.println();
+        printSquare(4); System.out.println();
+        printRectangle(17, 3); System.out.println();
+        printTriangle(4);
+    }
+
+    public static void printStars(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("*");
+        }
+    }
+    public static void printSquare(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println();
+            printStars(n);
+        }
+    }
+    public static void printRectangle(int width, int height) {
+        for (int i = 0; i < height; i++) {
+            System.out.println();
+            printStars(width);   
+        }
+    }
+    public static void printTriangle(int size) {
+        for (int i = 0; i <= size; i++) {
+            printStars(i);
+            System.out.println();
         }
     }
 }
