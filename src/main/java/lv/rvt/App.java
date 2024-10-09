@@ -1,37 +1,26 @@
 package lv.rvt;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App {
 
     public static void main(String[] args) {
-        printStars(9); System.out.println();
-        printSquare(4); System.out.println();
-        printRectangle(17, 3); System.out.println();
-        printTriangle(4);
-    }
+        Scanner reader = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int j = 0; j < 10; j++) {
+            numbers.add(j);
+        }
 
-    public static void printStars(int n) {
-        for (int i = 0; i < n; i++) {
-            System.out.print("*");
+        System.out.println(numbers);
+
+        int smallest = 0;
+        for (int i = 0; i < numbers.size(); i++) {
+            int number = numbers.get(i);
+            if (smallest > number) {
+                smallest = number;
+            }
         }
-    }
-    public static void printSquare(int n) {
-        for (int i = 0; i < n; i++) {
-            System.out.println();
-            printStars(n);
-        }
-    }
-    public static void printRectangle(int width, int height) {
-        for (int i = 0; i < height; i++) {
-            System.out.println();
-            printStars(width);   
-        }
-    }
-    public static void printTriangle(int size) {
-        for (int i = 0; i <= size; i++) {
-            printStars(i);
-            System.out.println();
-        }
+        System.out.println(smallest);
     }
 }
