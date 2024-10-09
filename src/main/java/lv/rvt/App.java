@@ -7,28 +7,21 @@ public class App {
 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<String> names = new ArrayList<>();
+        
         while (true) {
-            int number = Integer.valueOf(reader.nextLine());
-            if (number == 9999) {
+            String name = reader.nextLine();
+            if (name == "") {
                 break;
             }
-            numbers.add(number);
+            names.add(name);
         }
-        System.out.println(numbers);
-        if (numbers.size() > 0) {
-            int smallest = numbers.get(0); int index_of_smallest = 0;
-            for (int i = 1; i < numbers.size(); i++) {
-                int value = numbers.get(i);
-                if (smallest > value) {
-                    smallest = value;
-                    index_of_smallest = i;
-                }
-            }
-            System.out.println("Smallest number: " + smallest);
-            System.out.println("Found at index: " + index_of_smallest);
+        System.out.println("Search for?");
+        String searching_name = reader.nextLine();
+        if (names.contains(searching_name)) {
+            System.out.println(searching_name + " was found!");
         } else {
-            System.out.println("List is empty");
+            System.out.println(searching_name + " was not found!");
         }
     }
 }
