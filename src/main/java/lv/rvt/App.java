@@ -7,20 +7,26 @@ import java.util.Arrays;
 public class App {
 
     public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
         int[] numbers = new int[5];
         numbers[0] = 1;
         numbers[1] = 3;
         numbers[2] = 5;
         numbers[3] = 7;
         numbers[4] = 9;
-        System.out.println(Arrays.toString(numbers));
-        swap(numbers, 2, 4);
-        System.out.println(Arrays.toString(numbers));
-    }
 
-    public static void swap(int[] numbers, int num1, int num2) {
-        int helper = numbers[num1];
-        numbers[num1] = numbers[num2];
-        numbers[num2] = helper;
+        System.out.print("Search for? ");
+        int number = Integer.valueOf(reader.nextLine());
+        int index = -1;
+       for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == number) {
+                index = i;
+            }
+        }
+        if (index != -1) {
+            System.out.println(number + " is at index " + index);
+        } else {
+            System.out.println(number + " was not found");
+        }
     }
 }
