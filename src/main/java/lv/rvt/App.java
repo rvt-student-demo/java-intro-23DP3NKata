@@ -6,22 +6,26 @@ import java.util.ArrayList;
 public class App {
 
     public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
-        ArrayList<String> names = new ArrayList<>();
-        
-        while (true) {
-            String name = reader.nextLine();
-            if (name == "") {
-                break;
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(3);
+        list.add(2);
+        list.add(6);
+        list.add(-1);
+        list.add(5);
+        list.add(1);
+        list.add(9);
+
+        printNumbersInRange(list, 0, 5);
+        printNumbersInRange(list, 3, 10);
+    }
+
+    public static void printNumbersInRange(ArrayList<Integer> numbers, int lowerLimit, int upperLimit) {
+        System.out.println("The numbers in the range [" + lowerLimit + ", " + upperLimit + "]");
+        for (int number: numbers) {
+            if (number >= lowerLimit && number <= upperLimit) {
+                System.out.println(number);
             }
-            names.add(name);
         }
-        System.out.println("Search for?");
-        String searching_name = reader.nextLine();
-        if (names.contains(searching_name)) {
-            System.out.println(searching_name + " was found!");
-        } else {
-            System.out.println(searching_name + " was not found!");
-        }
+        
     }
 }
