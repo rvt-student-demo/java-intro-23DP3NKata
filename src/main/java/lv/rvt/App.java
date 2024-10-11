@@ -1,6 +1,7 @@
 package lv.rvt;
 
 import java.util.Scanner;
+import java.io.*;
 
 public class App {
     public static void main(String[] args) {
@@ -8,7 +9,7 @@ public class App {
         Registration registration = new Registration();
 
         while (true) {
-            System.out.println("Izvēlieties darbību: register, remove, show, exit");
+            System.out.println(Utils.ANSI_BLUE + "Izvēlieties darbību: register, remove, show, exit" + Utils.ANSI_RESET);
             String command = scanner.nextLine();
 
             switch (command) {
@@ -22,11 +23,11 @@ public class App {
                     registration.removeStudent();
                     break;
                 case "exit":
-                    System.out.println("Programma tiek slēgta.");
+                    System.out.println(Utils.ANSI_GREEN + "Programma tiek slēgta.");
                     scanner.close();
                     return;
                 default:
-                    System.out.println("Nepareiza komanda. Lūdzu, mēģiniet vēlreiz.");
+                    System.out.println(Utils.ANSI_RED + "Nepareiza komanda. Lūdzu, mēģiniet vēlreiz." + Utils.ANSI_RESET);
             }
         }
     }

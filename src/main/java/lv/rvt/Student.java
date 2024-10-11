@@ -25,5 +25,4 @@ public class Student {
     public String toString() {
         return String.format("Name: %s, Surname: %s, Email: %s, Group: %s", firstname, lastname, email, group);
     }
-
 }

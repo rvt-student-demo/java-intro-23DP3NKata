@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
@@ -38,7 +37,7 @@ public class CsvManager {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(FILE_NAME), StandardOpenOption.TRUNCATE_EXISTING)) {
             for (Student student : students) {
                 writer.write(student.toCsvString());
-                writer.newLine();
+                writer.newLine();   
             }
         }
     }
