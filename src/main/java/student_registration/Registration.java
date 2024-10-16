@@ -1,4 +1,4 @@
-package lv.rvt;
+package student_registration;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,9 +15,17 @@ public class Registration {
     public void registerStudent() {
         System.out.print(Utils.ANSI_CYAN + "Ievadiet vārdu: " + Utils.ANSI_RESET);
         String firstName = scanner.nextLine();
+        if (!firstName.matches("^[a-zA-Z]+$")) {
+            System.out.println(Utils.ANSI_RED + "Vārdam jābūt tikai no burtiem." + Utils.ANSI_RESET);
+            return;
+        }
 
         System.out.print(Utils.ANSI_CYAN + "Ievadiet uzvārdu: " + Utils.ANSI_RESET);
         String lastName = scanner.nextLine();
+        if (!lastName.matches("^[a-zA-Z]+$")) {
+            System.out.println(Utils.ANSI_RED + "Uzvārdam jābūt tikai no burtiem." + Utils.ANSI_RESET);
+            return;
+        }
 
         System.out.print(Utils.ANSI_CYAN + "Ievadiet e-pastu: " + Utils.ANSI_RESET);
         String email = scanner.nextLine();

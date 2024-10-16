@@ -1,4 +1,4 @@
-package lv.rvt;
+package student_registration;
 
 public class Student {
     private String firstname;

@@ -1,4 +1,4 @@
-package lv.rvt;
+package student_registration;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
