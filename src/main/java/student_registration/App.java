@@ -1,7 +1,6 @@
 package student_registration;
 
-import java.util.Scanner;
-import java.io.*;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
