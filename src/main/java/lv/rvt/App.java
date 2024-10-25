@@ -3,16 +3,41 @@ package lv.rvt;
 public class App {
 
     public static void main(String[] args) {
-        Stack s = new Stack();
-        s.add("1");
-        s.add("2");
-        s.add("3");
-        s.add("4");
-        s.add("5");
+        SimpleCollection s = new SimpleCollection("alphabet");
+        System.out.println(s);
 
-        while (!s.isEmpty()) {
-            System.out.println(s.take());
-        }
+        System.out.println();
+
+        s.add("a");
+        System.out.println(s);
+
+        System.out.println();
+
+        s.add("b");
+        System.out.println(s);
+
+        System.out.println();
+
+        s.add("c");
+        System.out.println(s);
+
+        SimpleCollection s2 = new SimpleCollection("characters");
+        System.out.println(s2);
+
+        System.out.println();
+
+        s2.add("magneto");
+        System.out.println(s2);
+
+        System.out.println();
+
+        s2.add("mystique");
+        System.out.println(s2);
+
+        System.out.println();
+
+        s2.add("phoenix");
+        System.out.println(s2);
     }
 }
 
