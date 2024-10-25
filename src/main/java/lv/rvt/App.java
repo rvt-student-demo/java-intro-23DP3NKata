@@ -3,41 +3,16 @@ package lv.rvt;
 public class App {
 
     public static void main(String[] args) {
-        SimpleCollection s = new SimpleCollection("alphabet");
-        System.out.println(s);
+        Gift book = new Gift("Harry Potter and the Philosopher's Stone", 2);
 
-        System.out.println();
+        System.out.println("Gift's name: " + book.getName());
+        System.out.println("Gift's weight: " + book.getWeight());
 
-        s.add("a");
-        System.out.println(s);
+        System.out.println("Gift: " + book);
 
-        System.out.println();
-
-        s.add("b");
-        System.out.println(s);
-
-        System.out.println();
-
-        s.add("c");
-        System.out.println(s);
-
-        SimpleCollection s2 = new SimpleCollection("characters");
-        System.out.println(s2);
-
-        System.out.println();
-
-        s2.add("magneto");
-        System.out.println(s2);
-
-        System.out.println();
-
-        s2.add("mystique");
-        System.out.println(s2);
-
-        System.out.println();
-
-        s2.add("phoenix");
-        System.out.println(s2);
+        Gift pc = new Gift("New pc", 7);
+        Package gifts = new Package();
+        gifts.addGift(pc);
+        System.out.println(gifts.totalWeitght());
     }
 }
-
