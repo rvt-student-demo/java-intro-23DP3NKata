@@ -1,36 +1,24 @@
 package lv.rvt;
-import java.util.*;
 
 public class App {
 
     public static void main(String[] args) {
-        Random random = new Random();
-        int[] randomValues = new int[10];
-        
-        for (int i = 0; i < 10; i++) {
-            randomValues[i] = random.nextInt(10) + 1;
-        }
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
 
-        int minNumber = randomValues[0];
-        int maxNumber = randomValues[0];
-        int sum = 0;
+        Suitcase adasCase = new Suitcase(10);
+        adasCase.addItem(book);
+        adasCase.addItem(phone);
 
-        for (int i = 0; i < randomValues.length; i++) {
-            if (randomValues[i] < minNumber) {
-                minNumber = randomValues[i];
-            }
+        Suitcase pekkasCase = new Suitcase(10);
+        pekkasCase.addItem(brick);
 
-            if (randomValues[i] > maxNumber) {
-                maxNumber = randomValues[i];
-            }
-            
-            System.out.print(randomValues[i] + ", ");
-            sum += randomValues[i];
-        }
-        
-        System.out.println();
-        System.out.println("Minimum number: " + minNumber);
-        System.out.println("Maximum number: " + maxNumber);
-        System.out.println("Average: " + (sum / 10.0));
+        Hold hold = new Hold(1000);
+        hold.addSuitcase(adasCase);
+        hold.addSuitcase(pekkasCase);
+
+        System.out.println("The suitcases in the hold contain the following items:");
+        hold.printItems();
     }
 }
