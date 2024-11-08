@@ -4,10 +4,10 @@ import java.util.*;
 public class App {
 
     public static void main(String[] args) {
+        TodoList list = new TodoList();
         Scanner scanner = new Scanner(System.in);
-        SimpleDictionary dictionary = new SimpleDictionary();
-        
-        TextUI textUI = new TextUI(scanner, dictionary);
+        UserInterface textUI = new UserInterface(scanner, list);
+
         textUI.start();
     }
 }
