@@ -1,13 +1,11 @@
 package lv.rvt;
-import java.util.*;
 
 public class App {
 
     public static void main(String[] args) {
-        JokeManager manager = new JokeManager();
-        Scanner scanner = new Scanner(System.in);
 
-        UserUI ui = new UserUI(scanner, manager);
-        ui.start();
+        int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+        MainProgram.sort(numbers);
+
     }
 }
