@@ -1,8 +1,8 @@
-package lv.rvt;
+package class_works;
 
-import java.util.Arrays;
+import java.util.*;
 
-public class MainProgram {
+public class SortingUtils {
 
     public static int smallest(int[] array) {
         int smallestNumber = array[0];
@@ -40,7 +40,7 @@ public class MainProgram {
     public static void sort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println(Arrays.toString(array));
-            
+
             int indexSmallest = indexOfSmallestFrom(array, i);
 
             swap(array, i, indexSmallest);
