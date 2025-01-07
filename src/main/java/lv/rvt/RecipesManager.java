@@ -66,4 +66,14 @@ public class RecipesManager {
         }
         return foundRecipes;
     }
+
+    public static List<Recipe> findRecipesByCookingTime(int time) {
+        List<Recipe> founRecipesByTime = new ArrayList<>();
+        for (Recipe recipe: recipes) {
+            if (recipe.getCookingTime() == time) {
+                founRecipesByTime.add(recipe);
+            }
+        }
+        return founRecipesByTime;
+    }
 }
