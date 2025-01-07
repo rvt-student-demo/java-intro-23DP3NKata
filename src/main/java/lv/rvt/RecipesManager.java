@@ -44,4 +44,26 @@ public class RecipesManager {
     public static List<Recipe> getRecipes() {
         return new ArrayList<>(recipes);
     }
+
+    public static void listRecipes() {
+        List<Recipe> recipes = RecipesManager.getRecipes();
+        if (recipes.isEmpty()) {
+            System.out.println("No recipes available. Please load a file first.");
+        } else {
+            System.out.println("\nRecipes:");
+            for (Recipe recipe : recipes) {
+                System.out.println(recipe);
+            }
+        }
+    }
+
+    public static List<Recipe> findRecipesByName(String name) {
+        List<Recipe> foundRecipes = new ArrayList<>();
+        for (Recipe recipe: recipes) {
+            if (recipe.getName().toLowerCase().contains(name.toLowerCase())) {
+                foundRecipes.add(recipe);
+            }
+        }
+        return foundRecipes;
+    }
 }

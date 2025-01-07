@@ -15,6 +15,7 @@ public class UserUI {
             System.out.println("\nCommands:");
             System.out.println("list - lists the recipes");
             System.out.println("stop - stops the program");
+            System.out.println("find name - searches recipes by name");
             System.out.print("Enter command: ");
             String command = scanner.nextLine();
 
@@ -22,21 +23,21 @@ public class UserUI {
                 System.out.println("Program stopped.");
                 break;
             } else if (command.equals("list")) {
-                listRecipes();
+                RecipesManager.listRecipes();
+            } else if (command.equals("find name")) {
+                System.out.println("Enter recipe name to search: ");
+                String name = scanner.nextLine();
+                List<Recipe> foundRecipes = RecipesManager.findRecipesByName(name);
+                if (foundRecipes.isEmpty()) {
+                    System.out.println("No recipes found with name \"" + name + "\".");
+                } else {
+                    System.out.println("\nFound Recipes: ");
+                    for (Recipe recipe: foundRecipes) {
+                        System.out.println(recipe);
+                    }
+                }
             } else {
                 System.out.println("Incorrect command!");
-            }
-        }
-    }
-
-    private void listRecipes() {
-        List<Recipe> recipes = RecipesManager.getRecipes();
-        if (recipes.isEmpty()) {
-            System.out.println("No recipes available. Please load a file first.");
-        } else {
-            System.out.println("\nRecipes:");
-            for (Recipe recipe : recipes) {
-                System.out.println(recipe);
             }
         }
     }
