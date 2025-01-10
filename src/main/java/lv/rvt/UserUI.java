@@ -17,6 +17,7 @@ public class UserUI {
             System.out.println("stop - stops the program");
             System.out.println("find name - searches recipes by name");
             System.out.println("find cooking time - searches recipes by cooking time");
+            System.out.println("find ingredient - searches recipes by ingredient");
             System.out.print("Enter command: ");
             String command = scanner.nextLine();
 
@@ -49,7 +50,18 @@ public class UserUI {
                         System.out.println(recipe);
                     }
                 }
-            } else {
+            } else if (command.equals("find ingredient")) {
+                System.out.println("Enter recipe ingredient to search: ");
+                String ingredient = scanner.nextLine();
+                List<Recipe> foundRecipesByIngredient = RecipesManager.findRecipesByIngredients(ingredient);
+                if (foundRecipesByIngredient.isEmpty()) {
+                    System.out.println("No recipes found with ingredient \"" + ingredient + "\".");
+                } else {
+                    System.out.println("\nFound Recipes: ");
+                    for (Recipe recipe: foundRecipesByIngredient) {
+                        System.out.println(recipe); }
+                    }
+                } else {
                 System.out.println("Incorrect command!");
             }
         }

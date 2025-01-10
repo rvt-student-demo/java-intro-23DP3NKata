@@ -76,4 +76,14 @@ public class RecipesManager {
         }
         return founRecipesByTime;
     }
+
+    public static List<Recipe> findRecipesByIngredients(String ingredient) {
+        List<Recipe> founRecipesByIngredient = new ArrayList<>();
+        for (Recipe recipe: recipes) {
+            if (recipe.getIngredients().contains(ingredient.toLowerCase())) {
+                founRecipesByIngredient.add(recipe);
+            }
+        }
+        return founRecipesByIngredient;
+    }
 }
